@@ -27,4 +27,7 @@ test('EPAM - Navigate to Client Work via Services', async ({ page }) => {
 
   // Verify the "Client Work" text is visible on the page
   await expect(page.getByText(/Client Work/i)).toBeVisible();
+
+  // Close the page explicitly (ensures browser is closed when run outside Playwright runner)
+  await page.close();
 });
